@@ -55,17 +55,9 @@ const createUser = async(data) => {
     role: "normal", 
     profile_image: data.profile_image,
     country: data.country,
-    is_active: true,
+    status: 'active',
     verified: false,
-  })
-  // const newUserWithSpreadOperator =  await Users.create({
-  //   ...data,
-  //   id: uuid.v4(), 
-  //   password: hashPassword(data.password), 
-  //   role: "normal", 
-  //   is_active: true,
-  //   verified: false,
-  // })
+  });
   return newUser
 
 };
