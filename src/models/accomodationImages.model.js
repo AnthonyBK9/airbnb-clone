@@ -1,25 +1,29 @@
-const { DataTypes } = require('sequelize');
-const { db } = require('../utils/database');
+const { DataTypes } = require("sequelize");
 
-const AccommodationImages = db.define('accommodation_images', {
-    id: {
-        primaryKey: true,
-        type: DataTypes.UUID,
-        allowNull: false
+const { db } = require("../utils/database");
+
+const AccommodationImages = db.define("accommodation_images", {
+  id: {
+    primaryKey: true,
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  name: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  accommodationId: {
+    allowNull: false,
+    type: DataTypes.UUID,
+    field: "accommodation_id",
+  },
+  url: {
+    allowNull: false,
+    type: DataTypes.STRING,
+    validate: {
+      isUrl: true,
     },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    accommodationID: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        field: 'accommodation_id'
-    },
-    url: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    }
+  },
 });
 
 module.exports = AccommodationImages;

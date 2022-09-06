@@ -1,58 +1,65 @@
-const { DataTypes } = require('sequelize');
-const { db } = require('../utils/database');
+const { DataTypes } = require("sequelize");
 
-const Accommodations = db.define('accommodations', {
-    id: {
-        primaryKey: true,
-        type: DataTypes.UUID,
-        allowNull: false
-    },
-    title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    description: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    guests: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    rooms: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    beds: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    bathrooms: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-    },
-    price: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-    },
-    hostID: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        field: 'host_id'
-    },
-    score: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-    },
-    placesID: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        field: 'places_id'
-    },
-    commision: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-    }
+const { db } = require("../utils/database");
+
+const Accommodations = db.define("accommodations", {
+  id: {
+    primaryKey: true,
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  title: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  description: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  guests: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+  },
+  rooms: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+  },
+  beds: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+  },
+  bathrooms: {
+    allowNull: false,
+    type: DataTypes.DECIMAL,
+  },
+  price: {
+    allowNull: false,
+    type: DataTypes.FLOAT,
+  },
+  hostId: {
+    allowNull: false,
+    type: DataTypes.UUID,
+    field: "host_id",
+  },
+  score: {
+    allowNull: false,
+    type: DataTypes.FLOAT,
+  },
+  placesId: {
+    allowNull: false,
+    type: DataTypes.UUID,
+    field: 'place_id'
+  },
+  commision: {
+    allowNull: false,
+    type: DataTypes.FLOAT,
+  },
+  isActive: {
+    allowNull: false,
+    type: DataTypes.BOOLEAN,
+    defaultValue: true,
+    fields: 'is_active'
+  }
 });
 
 module.exports = Accommodations;

@@ -52,11 +52,11 @@ const Users = db.define('users', {
         allowNull: false,
         type: DataTypes.STRING,
     },
-    role: {
-        allowNull: false,
-        type: DataTypes.STRING,
-        defaultValue: 'normal'
-    },
+    // role: {
+    //     allowNull: false,
+    //     type: DataTypes.STRING,
+    //     defaultValue: 'normal'
+    // },
     profileImage: {
         type: DataTypes.STRING,
         validate: {

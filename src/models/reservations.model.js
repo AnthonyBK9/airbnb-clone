@@ -47,7 +47,7 @@ const Reservations = db.define('reservations', {
     },
     scores: {
         allowNull: false,
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.DECIMAL,
     },
     isFinished: {
         type: DataTypes.BOOLEAN,
