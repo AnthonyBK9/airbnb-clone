@@ -19,11 +19,11 @@ const initModels = () => {
     Users.belongsToMany(Accomodations, { through: Reservations })
     Accomodations.belongsToMany(Users, { through: Reservations })
     //Accomodations -> accomodationImages uno a muchos
-    Accomodations.hasOne(AccommodationImages)
-    AccommodationImages.belongsToMany(Accomodations)
+    AccommodationImages.belongsTo(Accomodations)
+    Accomodations.hasMany(AccommodationImages)
     //Accomodations -> Places uno a muchos
-    Accomodations.hasOne(Places)
-    Places.belongsToMany(Accomodations)
+    Accomodations.hasMany(Places)
+    Places.belongsTo(Accomodations)
     //belongsTo
     //belongsToMany
     //hasOne
